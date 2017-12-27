@@ -596,7 +596,7 @@ if (!Array.prototype.indexOf) {
             getInstagramByTag();
         });
 
-        getInstagramByTag();
+        // getInstagramByTag();
 
         /* WOW plugin triggers animation.css on scroll
         ================================================== */

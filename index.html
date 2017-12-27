@@ -41,8 +41,11 @@
 
     <!-- Load Main jQuery Files
     ================================================== -->
-    <script src="js/jquery.min.js"></script>
     <script src="js/modernizr.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!-- Load vue Files
+    ================================================== -->
+    <script src="js/vue.min.js"></script>
 
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -53,6 +56,11 @@
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
     <![endif]-->
 
+    <script type="text/javascript">
+        new Vue({
+            el: 'body'
+        })
+    </script>
 </head>
 
 <body>
@@ -662,35 +670,6 @@
         </section>
         <!-- #Small Gallery Section Ends -->
 
-        <!-- Our Tweets -->
-        <section id="twitter">
-            <header class="section-header">
-                <h3 class="section-title">Our Tweets</h3>
-                <p class="section-tagline">Quisque aliquet erat condimentum sit aptent varius convallis quam a scelerisque nulla accumsan suspendisse scelerisque  aliquet erat aliquet porta erat.</p>
-            </header>
-            <div class="container timeline">
-                <span class="arrow-up"></span>
-                <span class="arrow-down"></span>
-                <div class="row">
-                    <div class="column six right">
-                        <h2 class="vibe">Ruby</h2>
-                        <span>@rubynick</span>
-                        <div id="twitter_one" class="tweets">
-                            <a href="#" class="follow">&rarr; Follow Ruby on Twitter</a>
-                        </div>
-                    </div>
-                    <div class="column six left">
-                        <h2 class="vibe">Nick</h2>
-                        <span>@rubynick</span>
-                        <div id="twitter_two" class="tweets">
-                            <a href="#" class="follow">&rarr; Follow Nick on Twitter</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- #Our Tweets Ends -->
-
         <!-- Gift Registry Section -->
         <section id="gift-registry" class="pattern">
             <header class="section-header">
@@ -865,23 +844,6 @@
         </section>
         <!-- #Guestbook Section Ends -->
 
-        <!-- Instagram Section -->
-        <section id="instagram-section" class="pattern">
-            <header class="section-header">
-                <h3 class="section-title">Instagram</h3>
-                <p class="section-tagline">Copy the hashtag below and share your experience from our Wedding :)</p>
-            </header>
-            <span class="hash">#rubyandnickwedding</span>
-            <div class="container">
-                <div class="instagram-images">
-                </div>
-            </div>
-            <div class="load-more">
-                <a href="#" class="button">Load more</a>
-            </div>
-        </section>
-        <!-- #Instagram Section Ends -->
-
         <!-- Contact Section -->
         <section id="contact" class="bgcolor">
             <header class="section-header">
@@ -956,7 +918,7 @@
     <script src="js/wow.min.js"></script>
     <script src="js/retina.min.js"></script>
     <script src="js/jquery.soc-share.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA13QXDFvwRTachgGyvmLGn1eETPbKZP0"></script>
     <script src="js/custom.js"></script>
     <script>
         var markers = [

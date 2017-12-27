@@ -703,12 +703,12 @@ a.button i {
     position: absolute;
     display: inline-block;
     line-height: 52px;
-    font-size: 28px;
+    font-size: 30px;
     color: #fff;
     bottom: 90px;
     left: 0;
     right: 0;
-    font-weight: 100;
+    font-weight: 300;
 }
 .hero #countdown span {
     font-family: 'Playfair Display', serif;
@@ -725,7 +725,8 @@ a.button i {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     text-align: center;
-    font-size: 18px;
+    font-size: 28px;
+    font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
 }
@@ -2746,6 +2747,7 @@ ul.double-angle li:before {
     .hero h1 {
         font-size: 46px;
         line-height: 52px;
+        font-weight: 500;
     }
     .hero #countdown {
         font-size: 16px;

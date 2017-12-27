@@ -637,7 +637,7 @@ if (!Array.prototype.indexOf) {
                 if (distance < 0) {
 
                     clearInterval(timer);
-                    document.getElementById(id).innerHTML = 'EVENT POCEO!';
+                    document.getElementById(id).innerHTML = '';
 
                     return;
                 }

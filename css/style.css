@@ -1225,10 +1225,15 @@ a.button i {
     z-index: 9;
 }
 #couple .girl {
-    background-image: url(../images/couple_her.jpg);
+    /*background-image: url(../images/couple_her.jpg);*/
 }
 #couple .boy {
-    background-image: url(../images/couple_him.jpg);
+    /*background-image: url(../images/couple_him.jpg);*/
+}
+#couple .images {
+    background-image: url(../images/couple.jpg);
+    background-size: cover;
+    height: 380px;
 }
 #couple .images .column > span {
     position: absolute;
@@ -1237,14 +1242,16 @@ a.button i {
     z-index: 9;
 }
 #couple .fname {
-    color: #D9C6B1;
+    color: black;
+    text-shadow: 1px 1px #D9C6B1;
     font-family: 'Playfair Display', serif;
     font-size: 64px;
     text-transform: uppercase;
     letter-spacing: 10px;
 }
 #couple .images .column .lname {
-    color: #fff;
+    color: black;
+    text-shadow: 1px 1px white;
     font-size: 24px;
     letter-spacing: 2px;
     text-transform: uppercase;

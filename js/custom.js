@@ -95,7 +95,7 @@ if (!Array.prototype.indexOf) {
                 var offset = -56;
             }
 
-            $.scrollTo($this.attr('href'), 650, {
+            $.scrollTo($($this.attr('href')), 650, {
                 easing: 'swing',
                 offset: offset,
                 'axis': 'y'

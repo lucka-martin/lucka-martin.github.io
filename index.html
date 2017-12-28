@@ -78,8 +78,8 @@
                             <li><a href="#couple">My</a></li>
                             <li><a href="#loveline">Love Story</a></li>
                             <li><a href="#wedding-event">Svatba</a></li>
-                            <li><a href="#wedding-gallery">Foto - TODO</a></li>
-                            <li><a href="#map">Kde</a></li>
+                            <!--<li><a href="#wedding-gallery">Foto - TODO</a></li>-->
+                            <li><a href="#map">Místo</a></li>
                         </ul>
                     </nav>
                     <a href="#" id="menu-toggle-wrapper">
@@ -238,77 +238,45 @@
         <!-- Wedding Events Section -->
         <section id="wedding-event" class="pattern">
             <header class="section-header">
-                <h3 class="section-title">Wedding Events</h3>
-                <p class="section-tagline">Quisque aliquet erat condimentum sit aptent varius convallis quam a scelerisque nulla accumsan suspendisse scelerisque  aliquet erat aliquet porta erat.</p>
+                <h3 class="section-title">Svatební den</h3>
+                <p class="section-tagline"></p>
             </header>
             <div class="container timeline">
                 <span class="arrow-up"></span>
                 <span class="arrow-down"></span>
+
+                <div class="clearfix"></div>
+                <div class="timeline-year start">
+                    <span>
+                        <a href="event.html" style="color: #faf8f0">Více zde</a>
+                    </span>
+                </div>
+
                 <div class="row">
-                    <div class="column six heart right">
-                        <div class="box center corner">
-                            <div class="corners-topleft"></div>
-                            <div class="corners-bottomleft"></div>
-                            <div class="corners-topright"></div>
-                            <div class="corners-bottomright"></div>
-                            <h2>Bachelorette Party</h2>
-                            <div class="details">
-                                <span class="waddress">Club Insomnia</span>
-                                <span class="waddress">60 Switch Street, New York NY</span>
-                                <span class="wdate">Thursday, 16 August 2014</span>
-                                <span class="wtime">8:00 PM - 5:00 AM</span>
-                            </div>
-                            <a href="event.html" class="button">Read More</a>                            
-                        </div>
-                    </div>
-                    <div class="column six heart left movetop">
-                        <div class="box center corner">
-                            <div class="corners-topleft"></div>
-                            <div class="corners-bottomleft"></div>
-                            <div class="corners-topright"></div>
-                            <div class="corners-bottomright"></div>
-                            <h2>Bachelor Party</h2>
-                            <div class="details">
-                                <span class="waddress">Club Insomnia</span>
-                                <span class="waddress">60 Switch Street, New York NY</span>
-                                <span class="wdate">Thursday, 16 August 2014</span>
-                                <span class="wtime">8:00 PM - 5:00 AM</span>
-                            </div>
-                            <a href="event.html" class="button">Read More</a>                            
-                        </div>
-                    </div>
-                    <div class="column six heart right">
-                        <div class="box center corner">
-                            <div class="corners-topleft"></div>
-                            <div class="corners-bottomleft"></div>
-                            <div class="corners-topright"></div>
-                            <div class="corners-bottomright"></div>
-                            <h2>Wedding Ceremony</h2>
-                            <div class="details">
-                                <span class="waddress">Club Insomnia</span>
-                                <span class="waddress">60 Switch Street, New York NY</span>
-                                <span class="wdate">Thursday, 16 August 2014</span>
-                                <span class="wtime">8:00 PM - 5:00 AM</span>
-                            </div>
-                            <a href="event.html" class="button">Read More</a>                            
-                        </div>
-                    </div>
-                    <div class="column six heart left">
-                        <div class="box center corner">
-                            <div class="corners-topleft"></div>
-                            <div class="corners-bottomleft"></div>
-                            <div class="corners-topright"></div>
-                            <div class="corners-bottomright"></div>
-                            <h2>Wedding Party</h2>
-                            <div class="details">
-                                <span class="waddress">Club Insomnia</span>
-                                <span class="waddress">60 Switch Street, New York NY</span>
-                                <span class="wdate">Thursday, 16 August 2014</span>
-                                <span class="wtime">8:00 PM - 5:00 AM</span>
-                            </div>
-                            <a href="event.html" class="button">Read More</a>                            
-                        </div>
-                    </div>
+                    <Event title="Příjezd hostů" class="right fadeInLeft">
+                        10:30
+                    </Event>
+                    <Event title="Obřad" class="left fadeInRight movetop">
+                        11:00
+                    </Event>
+                    <Event title="Focení" class="right fadeInLeft">
+                        11:00
+                    </Event>
+                    <Event title="Přípitek" class="left fadeInRight">
+                        11:00
+                    </Event>
+                    <Event title="???" class="right fadeInLeft">
+                        11:00
+                    </Event>
+                    <Event title="Rout" class="left fadeInRight">
+                        11:00
+                    </Event>
+                    <Event title="???" class="right fadeInLeft">
+                        11:00
+                    </Event>
+                    <Event title="První tanec" class="left fadeInRight">
+                        11:00
+                    </Event>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -530,6 +498,23 @@
         </div>
     </script>
     <!-- end event component -->
+    <!-- -->
+    <script type="text/x-template" id="wedding-event-template">
+        <div class="column six heart animated">
+            <div class="box center corner">
+                <div class="corners-topleft"></div>
+                <div class="corners-bottomleft"></div>
+                <div class="corners-topright"></div>
+                <div class="corners-bottomright"></div>
+                <h2>{{title}}</h2>
+                <div class="details">
+                    <span class="wtime">
+                        <slot></slot>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </script>
 
     <script type="text/javascript">
         Vue.config.devtools = true;
@@ -541,11 +526,23 @@
             template: '#event-template',
             props: ['date', 'title']
         };
+        var WeddingEvent = {
+            template: '#wedding-event-template',
+            props: ['title']
+        };
 
         new Vue({
             el: '#loveline',
             components: {
-                'Event': Event
+                'Event': Event,
+                'WeddingEvent': WeddingEvent
+            }
+        });
+
+        new Vue({
+            el: '#wedding-event',
+            components: {
+                'Event': WeddingEvent
             }
         });
     </script>

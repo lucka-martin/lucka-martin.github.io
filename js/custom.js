@@ -87,7 +87,7 @@ if (!Array.prototype.indexOf) {
 
         /* Scroll to Main Menu
         ==================================================================================== */
-        $('a[href*=#],#navigation-dotted a[href*=#]').click(function(event) {
+        $('#navigation a[href*=#],#navigation-dotted a[href*=#]').click(function(event) {
             var $this = $(this);
             if ($this.parents("#navigation-dotted").length) { // check to see if navigation is dotted,if yes no offset
                 var offset = 0;

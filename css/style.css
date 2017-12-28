@@ -708,7 +708,7 @@ a.button i {
     bottom: 90px;
     left: 0;
     right: 0;
-    font-weight: 300;
+    font-weight: 600;
 }
 .hero #countdown span {
     font-family: 'Playfair Display', serif;
@@ -1295,6 +1295,10 @@ a.button i {
 /* =========================================================== 
     9.  Loveline and Box Class
 ============================================================ */
+
+#loveline {
+    overflow: hidden;
+}
 
 #loveline h3.section-title:before {
     content: "\e000";

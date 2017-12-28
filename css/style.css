@@ -344,6 +344,11 @@ a.button i {
 .timeline .column {
     position: relative;
 }
+
+#wedding-event .timeline .column.heart:after {
+    background-color: #faf8f0;
+}
+
 .timeline .column.heart:after {
     content: '\f004';
     font-family: "FontAwesome";
@@ -2043,6 +2048,12 @@ select {
 }
 #map-pins li.special {
     background-position: 0 -288px;
+}
+#map-pins li.route {
+    cursor: pointer;
+}
+#map-pins li.route:hover {
+    text-decoration: underline;
 }
 #map {
     width: 100%;

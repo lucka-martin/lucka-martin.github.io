@@ -337,6 +337,9 @@ if (!Array.prototype.indexOf) {
                 return;
             }
 
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+
             var markerImages = {
                 airport: { url:'images/map/MapPins-small-red1.png',size: new google.maps.Size(35, 58),origin: new google.maps.Point(0, 0),anchor: new google.maps.Point(17.5, 40),scaledSize: new google.maps.Size(35, 344)},
                 hotel: { url:'images/map/MapPins-small-red1.png',size: new google.maps.Size(35, 58),origin: new google.maps.Point(0, 58),anchor: new google.maps.Point(17.5, 40),scaledSize: new google.maps.Size(35, 344)},
@@ -354,6 +357,7 @@ if (!Array.prototype.indexOf) {
             var mapOptions = {
                 scrollwheel: false,
                 zoom: 16,
+                maxZoom: 15,
             //    center: new google.maps.LatLng(44.7679455, 17.1909169), // New York
                 styles: [{
                     "featureType": "road",
@@ -457,8 +461,42 @@ if (!Array.prototype.indexOf) {
                     infoWindow.open(map, this);
                 });
                 
-            };
+            }
             map.fitBounds(bound);
+
+            directionsDisplay.setMap(map);
+
+            document.getElementById('submit').addEventListener('click', function() {
+                calculateAndDisplayRoute(this, directionsService, directionsDisplay);
+            });
+            var routeLinks = document.getElementsByClassName('route');
+            for (i = 0; i < routeLinks.length; i++) {
+                routeLinks.item(i).addEventListener('click', function() {
+                    calculateAndDisplayRoute(this, directionsService, directionsDisplay);
+                });
+            }
+        }
+
+        function calculateAndDisplayRoute(element, directionsService, directionsDisplay) {
+            var waypts = [];
+            waypts.push({
+                location: '49.999919, 16.226895',
+                stopover: true
+            });
+
+            directionsService.route({
+                origin: element.dataset.from,
+                destination: 'Penzion Mítkov, V Lukách 211, 561 12 Brandýs nad Orlicí',
+                waypoints: waypts,
+                optimizeWaypoints: true,
+                travelMode: 'DRIVING'
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    console.error('Directions request failed due to ' + status);
+                }
+            });
         }
 
         /* Theme Tabs

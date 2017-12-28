@@ -330,7 +330,9 @@ if (!Array.prototype.indexOf) {
 
         /* Google Map 
         ==================================================================================== */
-        google.maps.event.addDomListener(window, 'load', init);
+        if (typeof google !== "undefined") {
+            google.maps.event.addDomListener(window, 'load', init)
+        }
 
         function init() {
             if (typeof markers == 'undefined' || $.type(markers) != 'array') {

@@ -466,9 +466,6 @@ if (!Array.prototype.indexOf) {
 
             directionsDisplay.setMap(map);
 
-            document.getElementById('submit').addEventListener('click', function() {
-                calculateAndDisplayRoute(this, directionsService, directionsDisplay);
-            });
             var routeLinks = document.getElementsByClassName('route');
             for (i = 0; i < routeLinks.length; i++) {
                 routeLinks.item(i).addEventListener('click', function() {

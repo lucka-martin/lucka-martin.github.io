@@ -1234,7 +1234,7 @@ a.button i {
 #couple .images {
     background-image: url(../images/couple.jpg);
     background-size: cover;
-    height: 380px;
+    min-height: 380px;
 }
 #couple .images .column > span {
     position: absolute;
@@ -1244,7 +1244,7 @@ a.button i {
 }
 #couple .fname {
     color: black;
-    text-shadow: 1px 1px #D9C6B1;
+    text-shadow: 2px 1px #D9C6B1;
     font-family: 'Playfair Display', serif;
     font-size: 64px;
     text-transform: uppercase;

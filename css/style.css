@@ -680,6 +680,7 @@ a.button i {
     margin: 10px 0;
     color: #fff;
     font-size: 94px;
+    text-shadow: 1px 1px white;
 }
 .hero #countdown:before {
     position: absolute;

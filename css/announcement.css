@@ -1219,7 +1219,7 @@ a.button i {
     -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 230px;
+    height: 210px;
     margin-bottom: 0;
 }
 #couple .hero-heart {
@@ -2998,4 +2998,15 @@ ul.double-angle li:before {
     font-style: italic;
     text-align: center;
     font-size: 18px;
+}
+
+.qrcode {
+    position: relative;
+}
+
+.qrcode img {
+    position: relative;
+    margin: 10px auto;
+    left: 50%;
+    transform: translateX(-50%);
 }

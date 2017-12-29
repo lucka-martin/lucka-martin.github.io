@@ -2967,3 +2967,11 @@ ul.double-angle li:before {
         font: 21px/28px 'Playfair Display', serif;
     }
 }
+
+.wtime span {
+    font-size: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    height: 45px;
+    display: block;
+}

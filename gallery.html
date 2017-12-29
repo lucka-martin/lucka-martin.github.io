@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Title
+    ================================================== -->
+    <title>L & M - Svatební den</title>
+
+    <!-- Google Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/grid.css" media="all">
+    <link rel="stylesheet" href="css/magnific-popup.css" media="all">
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="css/animate.min.css" media="all">
+    <link rel="stylesheet" href="css/style.css" media="all">
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="images/elements/favicon.ico">
+    <link rel="apple-touch-icon" href="images/elements/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/elements/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="images/elements/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="images/elements/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/elements/apple-touch-icon-180x180.png"/>
+
+    <!-- Load Main jQuery Files
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <!-- Load vue Files
+    ================================================== -->
+    <script src="js/vue.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css"/>
+    <![endif]-->
+
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie.css"/>
+    <![endif]-->
+
+    <style type="text/css">
+        #title {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="page">
+
+    <header class="fixed">
+        <a href="index.html" id="back-home">Zpět na úvodní stránku</a>
+        <div id="title">
+            <h1>Fotogalerie</h1>
+        </div>
+    </header>
+
+    <section id="wedding-gallery" class="pattern">
+        <div class="container">
+            <div class="row">
+                <ul id="gallery-filter">
+                    <li class="active">
+                        <a href="#" data-filter="*">All</a>
+                    </li>
+                    <li>
+                        <a href="#" data-filter=".wedding">Obřad</a>
+                    </li>
+                    <li>
+                        <a href="#" data-filter=".feast">Hostina</a>
+                    </li>
+                    <li>
+                        <a href="#" data-filter=".party">Zábava</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="gallery-wrapper">
+            <Photo v-for="photo in photos" :image="photo.img" :class="photo.tag" :key="photo.img">
+                {{photo.title}}
+            </Photo>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="column four">
+                    &nbsp;
+                </div>
+                <div class="column four logo">L<span>&</span>M</div>
+                <div class="column four">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="column six copyright">
+                    <div>
+                        Theme made by <a href="#">logicathemes.com</a>
+                    </div>
+                </div>
+                <!--<div class="column six info">Photos by <a href="#">John Doe</a></div>-->
+            </div>
+        </div>
+    </footer>
+
+
+    <!--
+    -- TEMPLATES
+    -->
+    <!-- event component -->
+    <script type="text/x-template" id="photo-template">
+        <div class="block">
+            <div class="image-holder">
+                <img :src="image">
+            </div>
+            <a :href="image" class="video-hover">
+                <div class="portfolio-info">
+                    <h3 class="portfolio-title">
+                        <slot></slot>
+                    </h3>
+                </div>
+            </a>
+        </div>
+    </script>
+
+    <!-- JavaScript Files - These ones are in footer
+    ================================================== -->
+    <script src="js/device.min.js"></script>
+    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="js/SmoothScroll.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/jquery.isotope.sloppy-masonry.min.js"></script>
+    <script src="js/jquery.parallax.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/retina.min.js"></script>
+    <script src="js/jquery.soc-share.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
+    <script type="text/javascript">
+        Vue.config.devtools = true;
+        Vue.config.debug = true;
+        Vue.config.silent = false;
+        Vue.config.productionTip = true;
+
+        var Photo = {
+            template: '#photo-template',
+            props: ['image']
+        };
+
+        new Vue({
+            el: '#wedding-gallery',
+            components: {
+                'photo': Photo
+            },
+            mounted: function () {
+                initGallery();
+            },
+            data: {
+                photos: [
+                    {img: "images/album/WeddCouple1.jpg", tag: "wedding", title: "There is some title"},
+                    {img: "images/album/WeddCouple2.jpg", tag: "party", title: "There is some title"},
+                    {img: "images/album/WeddCouple3.jpg", tag: "party", title: "There is some title"},
+                    {img: "images/album/WeddCouple4.jpg", tag: "party", title: "There is some title"},
+                    {img: "images/album/WeddCouple5.jpg", tag: "wedding", title: "There is some title"},
+                    {img: "images/album/WeddCouple6.jpg", tag: "feast", title: "There is some title"},
+                    {img: "images/album/WeddCouple7.jpg", tag: "feast", title: "There is some title"},
+                    {img: "images/album/WeddCouple8.jpg", tag: "party", title: "There is some title"}
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -91,27 +91,35 @@
             <div class="row">
                 <Event title="Příjezd hostů" class="right fadeInLeft">
                     10:30
+                    <img src="images/icons/arrival.svg" width="64" slot="icon">
                 </Event>
                 <Event title="Obřad" class="left fadeInRight movetop">
                     11:00
+                    <img src="images/icons/groom.svg" width="64" slot="icon">
                 </Event>
                 <Event title="Focení" class="right fadeInLeft">
-                    11:00
+                    12:00
+                    <img src="images/icons/camera.svg" width="64" slot="icon">
                 </Event>
                 <Event title="Přípitek" class="left fadeInRight">
-                    11:00
+                    12:30
+                    <img src="images/icons/chemistry.svg" width="64" slot="icon">
                 </Event>
-                <Event title="???" class="right fadeInLeft">
-                    11:00
+                <Event title="Hostina" class="right fadeInLeft">
+                    12:45
+                    <img src="images/icons/chemistry.svg" width="64" slot="icon">
                 </Event>
                 <Event title="Rout" class="left fadeInRight">
-                    11:00
+                    17:30
+                    <img src="images/icons/tray.svg" width="64" slot="icon">
                 </Event>
                 <Event title="???" class="right fadeInLeft">
                     11:00
+                    <img src="images/icons/balloons.svg" width="64" slot="icon">
                 </Event>
                 <Event title="První tanec" class="left fadeInRight">
                     11:00
+                    <img src="images/icons/music.svg" width="64" slot="icon">
                 </Event>
                 <div class="clearfix"></div>
             </div>
@@ -121,9 +129,24 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="column four copyright">Theme made by <a href="#">logicathemes.com</a></div>
-                <div class="column four logo">L<span>&amp;</span>M</div>
-                <!--<div class="column four info">Photos by John Doe</div>-->
+                <div class="column four">
+                    &nbsp;
+                </div>
+                <div class="column four logo">L<span>&</span>M</div>
+                <div class="column four">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="column six copyright">
+                    <div>
+                        Theme made by <a href="#">logicathemes.com</a>
+                    </div>
+                    <div>
+                        Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                    </div>
+                </div>
+                <!--<div class="column six info">Photos by <a href="#">John Doe</a></div>-->
             </div>
         </div>
     </footer>
@@ -144,6 +167,8 @@
                     <span class="wtime">
                         <slot></slot>
                     </span>
+                </div><div class="details" style="margin-bottom: 0">
+                    <slot name="icon"></slot>
                 </div>
             </div>
         </div>

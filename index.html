@@ -72,13 +72,12 @@
                             <li class="submenu"><a href="#logo">&nbsp;&nbsp;&nbsp;</a>
                                 <ul>
                                     <li><a href="announcement.html">Oznámení</a></li>
-                                    <!--<li><a href="event.html">Informace o svatbě</a></li>-->
+                                    <!--<li><a href="wedding.html">Svatební den</a></li>-->
+                                    <!--<li><a href="#wedding-gallery">Fotogalerie</a></li>-->
                                 </ul>
                             </li>
                             <li><a href="#couple">My</a></li>
                             <li><a href="#loveline">Love Story</a></li>
-                            <!--<li><a href="wedding.html">Svatební den</a></li>-->
-                            <!--<li><a href="#wedding-gallery">Foto - TODO</a></li>-->
                             <li><a href="#map">Místo</a></li>
                         </ul>
                     </nav>
@@ -210,7 +209,7 @@
                         </div>
 
                         <!-- TODO -->
-                        <!--<a href="#wedding-event" class="more button" style="background-color: white">Více</a>-->
+                        <!--<a href="#wedding.html" class="more button" style="background-color: white">Více</a>-->
                     </Event>
 
                     <div class="clearfix"></div>
@@ -232,54 +231,6 @@
         </section>
         <!-- #Parallax Section Ends -->
 
-        <!-- Wedding Events Section -->
-        <section id="wedding-event" class="pattern">
-            <header class="section-header">
-                <h3 class="section-title">Svatební den</h3>
-                <p class="section-tagline"></p>
-            </header>
-            <div class="container timeline">
-                <span class="arrow-up"></span>
-                <span class="arrow-down"></span>
-
-                <div class="clearfix"></div>
-                <div class="timeline-year start">
-                    <span>
-                        <a href="event.html" style="color: #faf8f0">Více zde</a>
-                    </span>
-                </div>
-
-                <div class="row">
-                    <Event title="Příjezd hostů" class="right fadeInLeft">
-                        10:30
-                    </Event>
-                    <Event title="Obřad" class="left fadeInRight movetop">
-                        11:00
-                    </Event>
-                    <Event title="Focení" class="right fadeInLeft">
-                        11:00
-                    </Event>
-                    <Event title="Přípitek" class="left fadeInRight">
-                        11:00
-                    </Event>
-                    <Event title="???" class="right fadeInLeft">
-                        11:00
-                    </Event>
-                    <Event title="Rout" class="left fadeInRight">
-                        11:00
-                    </Event>
-                    <Event title="???" class="right fadeInLeft">
-                        11:00
-                    </Event>
-                    <Event title="První tanec" class="left fadeInRight">
-                        11:00
-                    </Event>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </section>
-        <!-- #Wedding Events Section Ends -->
-
         <!-- #Map Section -->
         <section id="map-section">
             <div class="container">
@@ -290,14 +241,6 @@
                         <li class="weddingParty">Zábava</li>
                         <li data-from="Ústí nad Orlicí" class="route">Z Ústí nad Orlicí</li>
                         <li data-from="Litomyšl" class="route">Z Litomyšle</li>
-                        <!--<li class="bachelor">Bachelor</li>-->
-                        <!--<li class="bachelorette">Bachelorette</li>-->
-                        <!--<li class="hotels">Hotels</li>-->
-                        <!--<li class="airport">Airport</li>-->
-                        <!--<li class="attractions">Attractions</li>-->
-                        <!--<li class="restoraunts">Restoraunts</li>-->
-                        <!--<li class="shopping">Shopping</li>-->
-                        <!--<li class="special">Special</li>-->
                     </ul>
                     <div>
                         <a target="_blank" href="https://www.google.cz/maps/place/Penzion+M%C3%ADtkov/@49.998415,16.256544,15z/data=!4m5!3m4!1s0x0:0x778dbf42feaacbb3!8m2!3d49.998415!4d16.256544?sa=X&ved=0ahUKEwixsoSCrK3YAhWRpKQKHbNOAkgQ_BIIiAEwDg">
@@ -495,23 +438,6 @@
         </div>
     </script>
     <!-- end event component -->
-    <!-- -->
-    <script type="text/x-template" id="wedding-event-template">
-        <div class="column six heart animated">
-            <div class="box center corner">
-                <div class="corners-topleft"></div>
-                <div class="corners-bottomleft"></div>
-                <div class="corners-topright"></div>
-                <div class="corners-bottomright"></div>
-                <h2>{{title}}</h2>
-                <div class="details">
-                    <span class="wtime">
-                        <slot></slot>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </script>
 
     <script type="text/javascript">
         Vue.config.devtools = true;
@@ -523,25 +449,14 @@
             template: '#event-template',
             props: ['date', 'title']
         };
-        var WeddingEvent = {
-            template: '#wedding-event-template',
-            props: ['title']
-        };
 
         new Vue({
             el: '#loveline',
             components: {
-                'Event': Event,
-                'WeddingEvent': WeddingEvent
+                'Event': Event
             }
         });
 
-        new Vue({
-            el: '#wedding-event',
-            components: {
-                'Event': WeddingEvent
-            }
-        });
     </script>
 </body>
 

@@ -67,7 +67,7 @@
     </div>
 
     <section id="home-content" class="top-menu">
-        <section id="story" class="pattern">
+        <section id="front" @click="flip" class="card pattern" v-if="!flipped">
             <div class="container announcement">
                 <div class="row">
                     <div class="twelve">
@@ -116,6 +116,25 @@
             </div>
         </section>
 
+        <section id="back" @click="flip" class="pattern card" v-else>
+            <div class="container announcement">
+                <div class="row">
+                    <div class="twelve">
+                        <div class="box corner wow zoomIn animated">
+                            <div class="corners-topleft"></div>
+                            <div class="corners-bottomleft"></div>
+                            <div class="corners-topright"></div>
+                            <div class="corners-bottomright"></div>
+
+                            <div class="qrcode">
+                                <img src="images/qr-code.svg" width="200">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer Section -->
         <footer>
             <div class="container">
@@ -138,8 +157,21 @@
                 </div>
             </div>
         </footer>
-        <!-- / Footer Section Ends -->
+
     </section>
+    <script type="text/javascript">
+        new Vue({
+            el: '#home-content',
+            data: {
+                flipped: false
+            },
+            methods: {
+                flip: function () {
+                    this.flipped = !this.flipped;
+                }
+            }
+        });
+    </script>
     <!-- JavaScript Files - These ones are in footer
     ================================================== -->
     <script src="js/device.min.js"></script>

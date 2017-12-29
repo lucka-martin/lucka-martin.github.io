@@ -1276,10 +1276,10 @@ a.button i {
     8.  Story Section
 ============================================================ */
 
-#story {
+.card {
     padding-top: 80px;
 }
-#story .quote {
+.card .quote {
     font: 26px/46px 'Playfair Display', serif;
     font: 46px/86px 'Great Vibes', cursive;
     margin: 30px auto;
@@ -3002,13 +3002,10 @@ ul.double-angle li:before {
     line-height: 80px;
 }
 
-.qrcode {
-    position: relative;
-}
-
 .qrcode img {
-    position: relative;
-    margin: 10px auto;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+
+    margin: -100px 0 0 -100px;
 }

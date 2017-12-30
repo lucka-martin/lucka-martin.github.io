@@ -603,7 +603,7 @@ if (!Array.prototype.indexOf) {
             });
         });
 
-        setFormAutoValue();
+        // setFormAutoValue();
 
         //ajax contact form
         $form.isValid({

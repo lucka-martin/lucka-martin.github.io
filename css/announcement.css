@@ -1543,8 +1543,8 @@ a.button i {
     position: absolute;
     content: '●';
     color: #D9C6B1;
-    top: -38px;
-    font-size: 16px;
+    top: -37px;
+    font-size: 15px;
     left: 50%;
     margin-left: -5px;
 }

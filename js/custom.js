@@ -1,4 +1,10 @@
 /* Fix for older browsers */
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+
 if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = function(obj, start) {
         for (var i = (start || 0), j = this.length; i < j; i++) {
@@ -20,9 +26,11 @@ if (!Array.prototype.indexOf) {
         ==================================================================================== */
         if (typeof imagesLoaded != 'undefined') {
             imagesLoaded($('body'), function() {
-            	wow.init();
-                $('.loaderOverlay').fadeOut('slow');
-                $('#gallery-wrapper').isotope('reLayout');
+                if ($.urlParam('key') === "L+M") {
+                    wow.init();
+                    $('.loaderOverlay').fadeOut('slow');
+                    $('#gallery-wrapper').isotope('reLayout');
+                }
             });
         }
 

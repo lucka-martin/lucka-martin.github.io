@@ -164,11 +164,15 @@
                 <div class="row">
 
                     <Event date="27. září 1990" title="Martin" class="right wow fadeInLeft">
-                        <img src="images/loveline/martin2.jpg">
+                        <a href="images/loveline/martin2.jpg" class="photo">
+                            <img src="images/loveline/martin2.jpg">
+                        </a>
                     </Event>
 
                     <Event date="8. června 1993" title="Lucie" class="left wow fadeInRight movetop">
-                        <img src="images/loveline/lucka.jpg">
+                        <a href="images/loveline/lucka.jpg" class="photo">
+                           <img src="images/loveline/lucka.jpg">
+                        </a>
                     </Event>
 
                     <Event date="28. listopadu 2009" title="První rande" class="right wow fadeInLeft">
@@ -180,31 +184,45 @@
                     </Event>
 
                     <Event date="25. července 2014" title="Harrachov" class="right wow fadeInLeft">
-                        <img src="images/loveline/krkonose.jpg" alt="Harrachov">
+                        <a href="images/loveline/krkonose.jpg" class="photo">
+                            <img src="images/loveline/krkonose.jpg" alt="Krkonoše">
+                        </a>
                     </Event>
 
                     <Event date="5. srpna 2015" title="Francie" class="left wow fadeInRight">
-                        <img src="images/loveline/francie.jpg" alt="Francie">
+                        <a href="images/loveline/francie.jpg" class="photo">
+                            <img src="images/loveline/francie.jpg" alt="Francie">
+                        </a>
                     </Event>
 
                     <Event date="29. srpna 2016" title="Chorvatsko" class="right wow fadeInLeft">
-                        <img src="images/loveline/chorvatsko.jpg" alt="Chorvatsko">
+                        <a href="images/loveline/chorvatsko.jpg" class="photo">
+                            <img src="images/loveline/chorvatsko.jpg" alt="Chorvatsko">
+                        </a>
                     </Event>
 
                     <Event date="9. března 2017" title="Amsterdam" class="left wow fadeInRight">
-                        <img src="images/loveline/amsterdam.jpg" alt="Amsterdam"/>
+                        <a href="images/loveline/amsterdam.jpg" class="photo">
+                            <img src="images/loveline/amsterdam.jpg" alt="Amsterdam"/>
+                        </a>
                     </Event>
 
                     <Event date="26. června 2017" title="Slovensko" class="right wow fadeInLeft movetop">
-                        <img src="images/loveline/slovensko.jpg" alt="Slovensko"/>
+                        <a href="images/loveline/slovensko.jpg" class="photo">
+                            <img src="images/loveline/slovensko.jpg" alt="Slovensko"/>
+                        </a>
                     </Event>
 
                     <Event date="30. září 2017" title="Itálie" class="left wow fadeInRight">
-                        <img src="images/loveline/italie.jpg" alt="Italie"/>
+                        <a href="images/loveline/italie.jpg" class="photo">
+                            <img src="images/loveline/italie.jpg" alt="Italie"/>
+                        </a>
                     </Event>
 
                     <Event date="2. října 2017" title="Zasnoubení 💍" class="right wow fadeInLeft movetop">
-                        <img src="images/loveline/zasnoubeni.jpg" alt="Zasnoubení">
+                        <a href="images/loveline/zasnoubeni.jpg" class="photo">
+                            <img src="images/loveline/zasnoubeni.jpg" alt="Zasnoubení">
+                        </a>
                         <div style="text-align: center">
                             <span>45.84896N 10.86874E</span>
                             <div>
@@ -214,9 +232,9 @@
                     </Event>
 
                     <Event date="1. září 2018" title="Svatba" class="left wow fadeInRight">
-                        <div>
+                        <a href="images/loveline/svatba.jpg" class="photo">
                             <img src="images/loveline/svatba.jpg" alt="Svatba">
-                        </div>
+                        </a>
 
                         <!-- TODO -->
                         <!--<a href="#wedding.html" class="more button" style="background-color: white">Více</a>-->
@@ -307,6 +325,7 @@
     <script src="js/jquery.soc-share.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA13QXDFvwRTachgGyvmLGn1eETPbKZP0"></script>
     <script src="js/custom.js"></script>
+    <script src="js/gallery-timeline.js"></script>
     <script>
         var markers = [
             ['Mítkov', 49.99841499999999, 16.256543999999963, 'wedding', 'Penzion Mítkov']
@@ -346,6 +365,9 @@
             el: '#loveline',
             components: {
                 'Event': Event
+            },
+            mounted: function() {
+                initGallery()
             }
         });
 

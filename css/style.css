@@ -1248,6 +1248,16 @@ a.button i {
     right: 65px;
     z-index: 9;
 }
+
+@media (max-width: 669px) {
+    #couple .images .column > span {
+        text-align: center;
+        transform: translateX(-50%);
+        left: 50% !important;
+        right: auto!important;
+    }
+}
+
 #couple .fname {
     color: black;
     text-shadow: 2px 1px #D9C6B1;

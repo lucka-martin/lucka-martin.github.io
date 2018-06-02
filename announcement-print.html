@@ -55,6 +55,35 @@
     <!--[if IE]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
     <![endif]-->
+
+    <style>
+        .separator::after {
+            content: "";
+        }
+        #couple .hero-heart {
+            background-image: none;
+        }
+        #couple .hero-heart img {
+            background-image: none;
+            transform: scale(1, 1.07);
+        }
+        .hero-heart{
+            margin-top: -10px;
+        }
+        .hero-heart span {
+            color: #D9C6B1;
+            vertical-align: bottom;
+
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            display: block;
+            font: 45px/80px 'Playfair Display', serif;
+            letter-spacing: 3px;
+
+            margin-top: -109px;
+        }
+    </style>
 </head>
 
 <body style="padding: 5px">
@@ -82,7 +111,11 @@
                             <div class="separator"></div>
 
                             <section id="couple">
-                                <div class="hero-heart"></div>
+                                <!--<div class="hero-heart"></div>-->
+                                <div class="hero-heart">
+                                    <img src="images/heart.svg" width="113px" height="120px">
+                                    <span>&</span>
+                                </div>
                                 <div class="images">
                                     <div class="column six girl">
                                         <span class="fname">Lucie</span>

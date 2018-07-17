@@ -1337,7 +1337,7 @@ a.button i {
     line-height: 24px;
     border-radius: 6px;
 }
-.box h2 {
+.box h2, .box h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 300;
 }
@@ -2159,6 +2159,7 @@ header.fixed {
     background: #FF8C89;
     color: #fff;
     text-align: center;
+    font-family: 'Playfair Display', serif;
 }
 #back-home:hover {
     -webkit-transform: translateZ(0);

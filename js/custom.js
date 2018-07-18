@@ -29,7 +29,7 @@ if (!Array.prototype.indexOf) {
         ==================================================================================== */
         if (typeof imagesLoaded != 'undefined') {
             imagesLoaded($('body'), function() {
-                if ($.urlParam('key') === "L+M") {
+                if ($.urlParam('key') === "L+M" || $.urlParam('key') === "L%20M") {
                     wow.init();
                     $('.loaderOverlay').fadeOut('slow');
                     $('#gallery-wrapper').isotope('reLayout');

@@ -38,6 +38,31 @@ Version: 1.0
 /* #General
 ================================================== */
 
+.just-married:before {
+    content: "";
+    background: url("../images/justmarried.svg") no-repeat;
+    background-size: 300px;
+    position: absolute;
+    z-index: 10;
+
+    position: absolute;
+    top: 25px;
+    right: 65px;
+
+    width: 300px;
+    height: 100px;
+
+    -webkit-transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
+    transform: rotate(25deg);
+}
+
+.announcement {
+    position: relative;
+}
+
 html {
     height: 100%;
 }

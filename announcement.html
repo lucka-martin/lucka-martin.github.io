@@ -67,8 +67,9 @@
     </div>
 
     <section id="home-content" class="top-menu">
-        <section id="front" @click="flip" class="card pattern" v-if="!flipped">
+        <section id="front" class="card pattern" v-if="!flipped">
             <div class="container announcement">
+                <div class="just-married"></div>
                 <div class="row">
                     <div class="twelve">
                         <div class="box corner">
@@ -116,7 +117,7 @@
             </div>
         </section>
 
-        <section id="back" @click="flip" class="pattern card" v-else>
+        <section id="back" class="pattern card" v-else>
             <div class="container announcement">
                 <div class="row">
                     <div class="twelve">
